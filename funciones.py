@@ -3,6 +3,8 @@
 import json
 import datetime
 
+if __name__ == '__main__':
+
 
 # ===== Funciones =====
 
