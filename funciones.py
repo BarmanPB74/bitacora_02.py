@@ -15,6 +15,7 @@ def cargar_bitacora(nombre_archivo="bitcora.json")
             except json.JSONDecodeError:
                 print("El archivo está dañado, empezando nuevo reporte")
                 return []
+    return []
 
 def saludar():
     print("Hola jefe")
