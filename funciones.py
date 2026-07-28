@@ -1,6 +1,3 @@
-# bitacora_02.py
-#Segunda version de bar_box
-
 #!/usr/bin/env python3
 
 import json
