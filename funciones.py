@@ -7,6 +7,14 @@ if __name__ == '__main__':
 
 
 # ===== Funciones =====
+def cargar_bitacora(nombre_archivo="bitcora.json")
+    if os.path.exists(nombre_archivo):
+        with open(nombre_archivo, "r", encoding="utf-8") as archivo:
+            try:
+                return json.load(archivo)
+            except json.JSONDecodeError:
+                print("El archivo está dañado, empezando nuevo reporte")
+                return []
 
 def saludar():
     print("Hola jefe")
