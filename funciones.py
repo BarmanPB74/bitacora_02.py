@@ -1,21 +1,25 @@
 #!/usr/bin/env python3
 
 import json
-import datetime
+import os
 
-if __name__ == '__main__':
+
+ARCHIVO_BITACORA = "bitacora.json"
 
 
 # ===== Funciones =====
-def cargar_bitacora(nombre_archivo="bitcora.json")
+
+def cargar_bitacora(nombre_archivo=ARCHIVO_BITACORA):
     if os.path.exists(nombre_archivo):
         with open(nombre_archivo, "r", encoding="utf-8") as archivo:
             try:
                 return json.load(archivo)
             except json.JSONDecodeError:
-                print("El archivo está dañado, empezando nuevo reporte")
+                print("El archivo está vacío o dañado.")
                 return []
+
     return []
+
 
 def saludar():
     print("Hola jefe")
@@ -34,19 +38,27 @@ def crear_reporte():
     return reporte
 
 
-def guardar_bitacora(bitacora):
-    with open("bitacora.json", "w") as archivo:
-      json.dump(bitacora, archivo)
+def guardar_bitacora(bitacora, nombre_archivo=ARCHIVO_BITACORA):
+    with open(nombre_archivo, "w", encoding="utf-8") as archivo:
+        json.dump(
+            bitacora,
+            archivo,
+            indent=4,
+            ensure_ascii=False
+        )
 
 
 # ===== Programa principal =====
 
-saludar()
+if __name__ == "__main__":
+    saludar()
 
-bitacora = []
+    bitacora = cargar_bitacora()
 
-nuevo = crear_reporte()
-bitacora.append(nuevo)
-guardar_bitacora(bitacora)
-print(nuevo)
+    nuevo = crear_reporte()
+    bitacora.append(nuevo)
+
+    guardar_bitacora(bitacora)
+
+    print(f"\nReporte guardado. Total de reportes: {len(bitacora)}")
 
