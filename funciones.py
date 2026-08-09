@@ -9,9 +9,9 @@ ARCHIVO_BITACORA = "bitacora.json"
 
 # ===== Funciones =====
 
-def cargar_bitacora(nombre_archivo=ARCHIVO_BITACORA):
-    if os.path.exists(nombre_archivo):
-        with open(nombre_archivo, "r", encoding="utf-8") as archivo:
+def cargar_bitacora(bitacora=ARCHIVO_BITACORA):
+    if os.path.exists(bitacora):
+        with open(bitacora, "r", encoding="utf-8") as archivo:
             try:
                 return json.load(archivo)
             except json.JSONDecodeError:
@@ -38,8 +38,8 @@ def crear_reporte():
     return reporte
 
 
-def guardar_bitacora(bitacora, nombre_archivo=ARCHIVO_BITACORA):
-    with open(nombre_archivo, "w", encoding="utf-8") as archivo:
+def guardar_bitacora(bitacora, bitacora=ARCHIVO_BITACORA):
+    with open(bitacora, "w", encoding="utf-8") as archivo:
         json.dump(
             bitacora,
             archivo,
