@@ -5,7 +5,9 @@ informes para explorar bucles, listas y tuplas.
 
 Esa idea ya está construida y funcionando dentro de BAR BOX:
 
-### → https://github.com/BarmanPB74/Bar_box
+### → https://barmanpb74.github.io/bar-box/
+
+Presentación y demo con datos ficticios. El código fuente es privado.
 
 El Libro de Guardia vive ahora en `/libro`, con los seis campos originales
 (título, fecha, hora, proyecto, tipo, contenido), guardado en SQLite y con
@@ -21,5 +23,5 @@ ya habías escrito, y una reimportación idéntica no duplica reportes.
 | Listas y diccionarios en memoria | SQLite, que sobrevive a cerrar la aplicación |
 
 Este repositorio queda como registro del punto de partida. El desarrollo
-continúa en el repositorio principal, rama
-`claude/bar-box-bitacora-mesas-k1s9nj`.
+continúa en un repositorio privado; la presentación está en
+https://github.com/BarmanPB74/bar-box
